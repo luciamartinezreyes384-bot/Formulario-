@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Básico</title>
+</head>
+<body>
+
+<section class="demo-form-card">
+  <h3>Formulario básico</h3>
+  <p>Completa los campos y presiona el botón.</p>
+
+  <form>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" placeholder="Escribe tu nombre">
+
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" placeholder="Escribe tu edad">
+
+    <button type="button" onclick="mostrarDatos()">Mostrar datos</button>
+  </form>
+
+  <div id="resultado" class="resultado">
+    Aquí aparecerá la información capturada.
+  </div>
+</section>
+
+<script>
+function mostrarDatos() {
+    const nombre = document.getElementById('nombre').value;
+    const edad = document.getElementById('edad').value;
+    const resultado = document.getElementById('resultado');
+
+    if (nombre && edad) {
+        resultado.innerHTML = `Nombre: ${nombre}<br>Edad: ${edad} años`;
+    } else {
+        resultado.innerHTML = "Por favor, llena todos los campos.";
+    }
+}
+</script>
+
+</body>
+</html>
